@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Rise - Awaken Your Potential</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&family=Montserrat:wght@700;900&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Part 1: Strategic Foundation - Visuals & Typography */
+        :root {
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+            --accent-blue: #00BFFF;
+            --text-light: #F0F0F0;
+            --text-dark: #333333;
+            --bg-dark-section: #111111;
+            --border-light: #555555;
+            --font-headline: 'Montserrat', 'Anton', sans-serif;
+            --font-body: 'Inter', 'Source Sans Pro', sans-serif;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-body);
+            background-color: var(--primary-black);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* General Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-headline);
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 1.1rem;
+            max-width: 65ch; /* Improves readability */
+        }
+
+        .cta-button {
+            background-color: var(--accent-blue);
+            color: var(--primary-black);
+            font-family: var(--font-headline);
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3);
+        }
+
+        section {
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        
+        /* Mobile First Adjustments */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            h1 { font-size: 2.5rem !important; }
+            h2 { font-size: 2rem !important; }
+            p { font-size: 1rem; }
+        }
+
+        /* Part 2: Website Blueprint - Section Styling */
+
+        /* Section 1: The Challenge (Hero) */
+        #challenge {
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 0 1rem;
+        }
+
+        #bg-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            background-color: var(--primary-black);
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 0.3;
+            filter: blur(8px);
+            transition: filter 1.5s ease-out, opacity 1.5s ease-out;
+        }
+
+        #challenge .content {
+            z-index: 1;
+            animation: fadeInContent 1s 0.5s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInContent {
+            to { opacity: 1; }
+        }
+
+        #challenge h1 {
+            font-size: 4.5rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .headline-line {
+            display: block;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        #challenge .sub-headline {
+            font-size: 1.5rem;
+            margin: 20px 0 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s 2s forwards;
+        }
+
+        #challenge .cta-button {
+             opacity: 0;
+             animation: fadeInUp 1s 2.5s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section 2: The Trust Bar */
+        #trust-bar {
+            background-color: var(--primary-white);
+            color: var(--primary-black);
+            padding: 20px 0;
+        }
+
+        #trust-bar .trust-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .trust-item svg {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Section 3: Product Showcase */
+        #catalyst {
+            background-color: var(--primary-black);
+        }
+        
+        .product-showcase {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        .product-visuals { flex: 1; text-align: center; position: sticky; top: 100px; }
+        .product-details { flex: 1; }
+        
+        .product-visuals img { max-width: 100%; height: auto; transition: opacity 0.3s ease; }
+        #product-image-container .product-image { display: none; }
+        #product-image-container .product-image.active { display: block; }
+
+        .color-swatches { margin-top: 20px; }
+        .swatch {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid var(--border-light);
+            margin: 0 8px;
+            transition: border-color 0.3s;
+        }
+        .swatch:hover, .swatch.active { border-color: var(--accent-blue); }
+
+        .product-details h2 { font-size: 2.5rem; margin-bottom: 30px; }
+        .product-details ul { list-style: none; padding: 0; margin-bottom: 30px; }
+        .product-details li { margin-bottom: 20px; display: flex; align-items: flex-start; }
+        .product-details li svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            fill: var(--accent-blue);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .product-options .selectors { display: flex; gap: 20px; margin-bottom: 20px; }
+        .product-options select {
+            padding: 12px;
+            width: 100%;
+            background-color: #222;
+            color: white;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .price { font-size: 2.2rem; font-weight: 700; margin-bottom: 30px; color: var(--accent-blue); }
+        
+        @media (max-width: 900px) {
+            .product-showcase { flex-direction: column; }
+            .product-visuals { position: static; }
+        }
+
+        /* Section 4: The Science */
+        #science { background-color: var(--bg-dark-section); text-align: center; }
+        #science .container { max-width: 1000px; }
+        #science h2 { font-size: 2.5rem; margin-bottom: 80px; }
+        .science-blocks { display: flex; justify-content: space-around; gap: 40px; }
+        
+        .science-block {
+            flex: 1;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .science-block.visible { opacity: 1; transform: translateY(0); }
+        .science-block h3 { color: var(--accent-blue); font-size: 1.8rem; }
+        .science-block p { max-width: 30ch; margin: 10px auto 0; }
+        @media (max-width: 768px) {
+            .science-blocks { flex-direction: column; }
+        }
+
+        /* Section 5: Social Proof */
+        #social-proof { text-align: center; }
+        #social-proof h2 { font-size: 2.5rem; margin-bottom: 40px; }
+        .reviews-carousel { max-width: 800px; margin: 0 auto 80px; position: relative; overflow: hidden; padding: 0 20px; }
+        
+        .review { display: none; padding: 20px; }
+        .review.active { display: block; animation: fadeIn 0.5s; }
+        .review p { font-style: italic; font-size: 1.2rem; }
+        .review .author { font-weight: 700; margin-top: 15px; color: var(--accent-blue); }
+        .carousel-dots { text-align: center; margin-top: 20px; }
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .dot.active { background-color: var(--accent-blue); }
+
+        #community-showcase h3 { font-size: 2rem; margin-bottom: 20px; }
+        #instagram-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 5px;
+            min-height: 250px;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        /* Section 6: Founders & Promise */
+        #founders { background-color: var(--primary-white); color: var(--text-dark); }
+        .founders-container { display: flex; align-items: center; gap: 60px; }
+        .founder-story, .founder-promise { flex: 1; }
+        .founder-photo { max-width: 100%; height: auto; border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        #founders h3 { color: var(--primary-black); font-size: 2rem; }
+        .signatures { margin-top: 20px; font-family: 'Brush Script MT', cursive; font-size: 1.8rem; opacity: 0.8; }
+        @media (max-width: 900px) {
+            .founders-container { flex-direction: column; text-align: center; }
+            .founders-container p { margin-left: auto; margin-right: auto; }
+        }
+
+        /* Section 7: The Final Challenge */
+        #final-challenge { text-align: center; background-color: var(--bg-dark-section); }
+        #final-challenge h2 { font-size: 3rem; color: var(--accent-blue); margin-bottom: 15px; }
+        #final-challenge .sub-headline { font-size: 1.5rem; margin-bottom: 40px; }
+        .final-purchase-area {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .final-product-display { text-align: center; }
+        .final-product-display img { max-width: 150px; height: auto; margin-bottom: 10px; }
+        .final-purchase-controls { display: flex; gap: 15px; }
+        @media (max-width: 768px) {
+            .final-purchase-area { flex-direction: column; align-items: center; }
+        }
+
+        /* Part 3: Essential Functionality - Exit Intent Popup */
+        #exit-intent-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .popup-content {
+            background: var(--bg-dark-section);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            max-width: 500px;
+            width: 90%;
+            border: 1px solid var(--border-light);
+            animation: fadeIn 0.3s;
+        }
+        
+        .popup-content h3 { color: var(--accent-blue); font-size: 1.8rem; }
+        .popup-content p { font-size: 1.1rem; }
+        .promo-code {
+            background: var(--primary-black);
+            border: 1px dashed var(--accent-blue);
+            padding: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        #close-popup {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="challenge">
+        <div id="bg-video-container">
+            <video id="bg-video" loop muted playsinline></video>
+        </div>
+        <div class="content">
+            <h1>
+                <span class="headline-line" id="line1">YOUR ALPHA IS SLEEPING.</span>
+                <span class="headline-line" id="line2">YOUR RISE IS WAITING.</span>
+            </h1>
+            <p class="sub-headline">The only compression shirt engineered to awaken your potential.</p>
+            <a href="#catalyst" class="cta-button">Begin The Rise</a>
+        </div>
+    </section>
+
+    <section id="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 13.5L22.5 13.5L22.5 19.5C22.5 20.3284 21.8284 21 21 21L3 21C2.17157 21 1.5 20.3284 1.5 19.5L1.5 4.5C1.5 3.67157 2.17157 3 3 3L13.5 3L13.5 6L4.5 6L4.5 18L19.5 18L19.5 13.5ZM13.5 10.5L16.5 10.5L16.5 7.5L13.5 7.5L13.5 10.5ZM18 10.5L21 10.5L21 7.5L18 7.5L18 10.5ZM8.25 10.5C8.94036 10.5 9.5 9.94036 9.5 9.25C9.5 8.55964 8.94036 8 8.25 8C7.55964 8 7 8.55964 7 9.25C7 9.94036 7.55964 10.5 8.25 10.5ZM16.5 16.5C17.1904 16.5 17.75 15.9404 17.75 15.25C17.75 14.5596 17.1904 14 16.5 14C15.8096 14 15.25 14.5596 15.25 15.25C15.25 15.9404 15.8096 16.5 16.5 16.5ZM18 3L18 1.5L22.5 1.5L22.5 6L18 6L18 3Z"></path></svg>
+                <span>FREE 3-DAY SHIPPING</span>
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM11.1857 15.657L17.4429 9.39985L16.0286 7.98564L11.1857 12.8285L8.65714 10.3004L7.24292 11.7146L11.1857 15.657Z"></path></svg>
+                <span>60-DAY 'WAKE YOUR ALPHA' GUARANTEE</span>
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18.26L4.94689 22.2082L6.52174 14.2799L0.587891 8.7918L8.61493 7.84006L12 0.5L15.3851 7.84006L23.4121 8.7918L17.4783 14.2799L19.0531 22.2082L12 18.26Z"></path></svg>
+                <span>4.9/5 STARS FROM 10,000+ RISERS</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalyst">
+        <div class="container product-showcase">
+            <div class="product-visuals">
+                <div id="product-image-container">
+                    </div>
+                <div class="color-swatches">
+                    <span class="swatch" data-color="black" style="background-color: #1a1a1a;"></span>
+                    <span class="swatch" data-color="white" style="background-color: #e0e0e0;"></span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h2>EQUIPMENT FOR THE AWAKENING.</h2>
+                <ul>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 10V4.5L5 14H11V19.5L19 10H13Z"></path></svg> <div><strong>Wake Your Sleeping Strength:</strong> Reduces muscle oscillation to convert wasted energy into dominant, focused power.</div></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 10V4.5L5 14H11V19.5L19 10H13Z"></path></svg> <div><strong>Command Your Recovery:</strong> Our compression mapping enhances blood flow, cutting down recovery time so your rise never has to wait.</div></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 10V4.5L5 14H11V19.5L19 10H13Z"></path></svg> <div><strong>Move Without Limits:</strong> 4-way stretch fabric acts as a true second skin, unlocking your body’s full range of motion.</div></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 10V4.5L5 14H11V19.5L19 10H13Z"></path></svg> <div><strong>Maintain Peak Intensity:</strong> Thermoregulating fabric keeps your engine from overheating, so you can push through barriers.</div></li>
+                </ul>
+                <div class="product-options">
+                    <div class="selectors">
+                        <select name="size" id="size-select">
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">X-Large</option>
+                        </select>
+                        <select name="color" id="color-select">
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                        </select>
+                    </div>
+                    <div class="price">$120.00</div>
+                    <button class="cta-button" id="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="science">
+        <div class="container">
+            <h2>The Architecture of Your Rise</h2>
+            <div class="science-blocks">
+                <div class="science-block">
+                    <h3>Unlocking Flow.</h3>
+                    <p>Strategic compression zones accelerate blood flow, delivering more oxygen to your muscles for peak output and faster recovery.</p>
+                </div>
+                <div class="science-block">
+                    <h3>Focusing Force.</h3>
+                    <p>By minimizing micro-vibrations in your muscles, every ounce of your energy is directed into pure, efficient power.</p>
+                </div>
+                <div class="science-block">
+                    <h3>Controlling Climate.</h3>
+                    <p>Advanced moisture-wicking technology pulls sweat from the skin, keeping your core temperature stable and your focus sharp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="social-proof">
+        <div class="container">
+            <h2>Hear The Waking Alphas</h2>
+            <div class="reviews-carousel">
+                <div class="review-container">
+                    </div>
+                <div class="carousel-dots"></div>
+            </div>
+
+            <div id="community-showcase">
+                <h3>THIS IS THE RISE. #MyAlphaRise</h3>
+                <div id="instagram-feed">
+                    <p>Live Instagram feed pulling from #MyAlphaRise would be displayed here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founders">
+        <div class="container founders-container">
+            <div class="founder-story">
+                 <img src="https://via.placeholder.com/500x550.png?text=Simo,+Hamouch,+Zakaria" alt="Founders of Alpha Rise" class="founder-photo">
+            </div>
+            <div class="founder-promise">
+                <h3>WE KNOW THE FEELING.</h3>
+                <p>"We are Simo, Hamouch, and Zakaria. We founded Alpha Rise because we were tired of feeling our own potential sleeping, held back by gear that wasn't serious. We engineered the 'Origin' shirt as the answer—the catalyst we needed for our own rise. Now, we're sharing it with you."</p>
+                <h3>THE 'WAKE YOUR ALPHA' GUARANTEE.</h3>
+                <p>"Your rise is waiting, and we want you to start it with zero risk. Put the 'Origin' shirt to the test for 60 days. If you don't feel a tangible difference in your power, focus, and recovery—if you don't feel your Alpha beginning to stir—send it back for a full refund. No exceptions."</p>
+                <div class="signatures">
+                    Simo, Hamouch, &amp; Zakaria
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="final-challenge">
+        <div class="container">
+            <h2>YOUR RISE IS WAITING.</h2>
+            <p class="sub-headline">Will you answer?</p>
+            <div class="final-purchase-area">
+                <div class="final-product-display" id="final-product-black">
+                     <img src="https://via.placeholder.com/300x350/000000/FFFFFF?text=Origin+Black" alt="Origin Shirt Black">
+                    <p>Black</p>
+                </div>
+                <div class="final-product-display" id="final-product-white">
+                     <img src="https://via.placeholder.com/300x350/FFFFFF/000000?text=Origin+White" alt="Origin Shirt White">
+                    <p>White</p>
+                </div>
+            </div>
+            <div class="final-purchase-controls">
+                </div>
+            <button class="cta-button">Start My Rise Now</button>
+        </div>
+    </section>
+    
+    <div id="exit-intent-popup">
+        <div class="popup-content">
+            <button id="close-popup">&times;</button>
+            <h3>WAIT.</h3>
+            <p>Don't let your Alpha sleep on it. Take 10% off and begin your rise right now.</p>
+            <div class="promo-code">RISEUP</div>
+            <a href="#" class="cta-button">Apply Discount</a>
+        </div>
+    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // --- Configuration ---
+        const config = {
+            videoSrc: 'https://cdn.pixabay.com/video/2022/09/20/132549-752495349_large.mp4',
+            productImages: {
+                black: 'https://i.ibb.co/LQr1fD4/ALPHA.png',
+                white: 'https://i.ibb.co/xG3wz5Y/ALPHA-1.png'
+            },
+            reviews: [
+                {
+                    quote: "It's Not Hype. I felt stuck for months. A friend recommended this shirt. The level of focus and support is different. I feel my power is more...available. My rise has officially begun.",
+                    author: "David L. | Verified Buyer"
+                },
+                {
+                    quote: "The best compression I've ever worn. It feels like a second skin that's actively helping me push harder. Recovery time has noticeably improved.",
+                    author: "Marcus S. | Verified Buyer"
+                },
+                {
+                    quote: "I was skeptical, but the 'Wake Your Alpha' guarantee made me try it. I'm keeping it. This shirt is a serious piece of equipment.",
+                    author: "Jenna K. | Verified Buyer"
+                }
+            ]
+        };
+
+        // --- Section 1: Hero Animation ---
+        const video = document.getElementById('bg-video');
+        video.src = config.videoSrc;
+        const line1 = document.getElementById('line1');
+        const line2 = document.getElementById('line2');
+
+        window.addEventListener('load', () => {
+            video.play();
+            setTimeout(() => {
+                document.getElementById('bg-video').style.filter = 'blur(0px)';
+                document.getElementById('bg-video').style.opacity = '0.5';
+            }, 500);
+
+            setTimeout(() => {
+                animateLine(line1);
+            }, 1000);
+
+            setTimeout(() => {
+                animateLine(line2);
+            }, 1500);
+        });
+
+        function animateLine(line) {
+            line.style.opacity = '1';
+            line.style.transform = 'translateY(0)';
+            line.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        }
+
+        // --- Section 3: Product Showcase ---
+        const productImageContainer = document.getElementById('product-image-container');
+        const colorSwatches = document.querySelectorAll('.swatch');
+        const colorSelect = document.getElementById('color-select');
+
+        // Create image elements
+        productImageContainer.innerHTML = `
+            <img src="${config.productImages.black}" alt="Alpha Rise Origin Shirt in Black" class="product-image active" data-color="black">
+            <img src="${config.productImages.white}" alt="Alpha Rise Origin Shirt in White" class="product-image" data-color="white">
+        `;
+        const productImages = document.querySelectorAll('.product-image');
+
+        function switchColor(color) {
+            // Update images
+            productImages.forEach(img => {
+                img.classList.toggle('active', img.dataset.color === color);
+            });
+            // Update swatches
+            colorSwatches.forEach(swatch => {
+                swatch.classList.toggle('active', swatch.dataset.color === color);
+            });
+            // Update dropdown
+            colorSelect.value = color;
+        }
+
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', () => switchColor(swatch.dataset.color));
+        });
+        
+        colorSelect.addEventListener('change', () => switchColor(colorSelect.value));
+        
+        // Initialize
+        switchColor('black');
+
+
+        // --- Section 4: Scroll-triggered Animations ---
+        const animatedElements = document.querySelectorAll('.science-block');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(el => observer.observe(el));
+        
+        
+        // --- Section 5: Reviews Carousel ---
+        const reviewContainer = document.querySelector('.review-container');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        let currentReview = 0;
+
+        config.reviews.forEach((review, index) => {
+            const reviewEl = document.createElement('div');
+            reviewEl.className = 'review';
+            if (index === 0) reviewEl.classList.add('active');
+            reviewEl.innerHTML = `<p>"${review.quote}"</p><div class="author">${review.author}</div>`;
+            reviewContainer.appendChild(reviewEl);
+
+            const dotEl = document.createElement('span');
+            dotEl.className = 'dot';
+            if (index === 0) dotEl.classList.add('active');
+            dotEl.dataset.index = index;
+            dotsContainer.appendChild(dotEl);
+        });
+        
+        const reviewEls = document.querySelectorAll('.review');
+        const dotEls = document.querySelectorAll('.dot');
+
+        function showReview(index) {
+            reviewEls.forEach((r, i) => r.classList.toggle('active', i === index));
+            dotEls.forEach((d, i) => d.classList.toggle('active', i === index));
+            currentReview = index;
+        }
+
+        dotsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('dot')) {
+                showReview(parseInt(e.target.dataset.index));
+            }
+        });
+        
+        // Auto-play carousel
+        setInterval(() => {
+            let nextReview = (currentReview + 1) % config.reviews.length;
+            showReview(nextReview);
+        }, 6000);
+
+
+        // --- Part 3: Exit-Intent Popup ---
+        const popup = document.getElementById('exit-intent-popup');
+        const closeBtn = document.getElementById('close-popup');
+        let cartHasItem = false;
+
+        document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+            cartHasItem = true;
+            // Add a visual confirmation
+            const btn = document.getElementById('add-to-cart-btn');
+            btn.textContent = 'Added!';
+            setTimeout(() => {
+                btn.textContent = 'Add to Cart';
+            }, 1500);
+        });
+
+        document.addEventListener('mouseleave', (e) => {
+            // Only trigger if cart has an item and cursor is leaving the top of the viewport
+            if (cartHasItem && e.clientY <= 0) {
+                popup.style.display = 'flex';
+            }
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+        
+        popup.addEventListener('click', (e) => {
+             if (e.target === popup) {
+                popup.style.display = 'none';
+             }
+        });
+    });
+    </script>
+
+</body>
+</html>
